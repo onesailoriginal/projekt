@@ -2,8 +2,9 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: dodgerblue linear-gradient(22deg, rgb(33, 120, 120), dodgerblue, rgb(0, 0, 0)) fixed;
+    background: rgb(30,30,30) linear-gradient(40deg, rgb(50, 50, 50), rgb(30,30,30), rgb(0, 0, 0)) fixed;
     font-family: "Geologica", sans-serif;
+    
 }
 
 .icon-container{
@@ -22,18 +23,44 @@ body{
     display: none;
     position: absolute;
     top: -1000px;
-    
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px); /* Kezdő pozíció */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
 }
+
 .showSettings{
     display: flex;
-     background: rgb(133, 128, 128) linear-gradient(4000deg, rgb(255, 255, 255), rgb(165, 156, 156), rgb(0, 0, 0)) fixed;
-    border: 3px black solid;
+    background: rgba(80, 80, 80, 0.5) linear-gradient(40deg, rgba(70, 70, 70, 0.5), rgba(60, 60, 60, 0.5), rgba(50, 50, 50,0.5)) fixed;
+    border: 3px rgb(95, 93, 93) solid;
     border-radius: 10%;
     width: 35rem;
     height: 25rem;
     top: 30%;
     left: 30%;
+   display: flex;  /* Megjelenik flex-ként */
+    opacity: 1;     /* Fokozatosan láthatóvá válik */
+    transform: translateY(0); /* Az alaphelyzetbe kerül */
 }
+
+.settings-text{
+    margin: 0 auto;
+    color: rgb(220, 220, 220);
+}
+
+.stocks-list{
+    border: 3px white solid;
+    width: 25rem;
+    height: 80vh;
+    left: 0;
+    top:10%;
+}
+.stocks-main{
+    border: 3px white solid;
+
+}
+
 
 @media (max-width: 768px){
     .showSettings{
