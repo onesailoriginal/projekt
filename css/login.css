@@ -1,1 +1,178 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: dodgerblue linear-gradient(22deg, rgb(16, 140, 140), dodgerblue, rgb(0, 0, 0)) fixed;
+    font-family: "Geologica", sans-serif;
+}
+.notification-alert {
+    position: absolute;
+    background-color: rgb(156, 54, 54);
+    background-color: rgb(255, 255, 255);
+    width: 13rem;
+    height: 3rem;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-family: "Geologica", sans-serif;
+    display: flex;
+    /* Flexbox engedélyezése */
+    align-items: center;
+    /* Függőleges középre igazítás */
+    justify-content: center;
+    /* Vízszintes középre igazítás */
+    text-align: center;
+    /* Biztosítja, hogy a szöveg középre igazított legyen */
+}
+.notification-alert.show {
+    top: 8%;
+    opacity: 1;
+}
 
+.notification-alert i {
+    padding-left: 3%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* ez adja meg a távolságot az ikon és a szöveg között */
+}
+
+.notification-alert p {
+    display: inline-block;
+    margin: 0;
+    font-family: "Geologica", sans-serif;
+    /* hogy eltüntessük a p alapértelmezett margóját */
+}
+.form_block{
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 20rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(57, 56, 56, 0.898);
+    border-radius: 30px;
+    box-shadow: 3px 1px 3px 2px black;
+    transition: all 1s ease;
+}
+
+.form_field {
+    text-align: left;
+    background-color: transparent;
+    max-width: 300px;
+    width: 60%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+    color: rgb(91, 90, 90);
+    box-shadow: 0 0 0 transparent;
+    transition:
+        color 1s ease,
+        border-color 1s ease,
+        box-shadow 1s ease,
+        transform 1s ease;
+    transform: translateX(0);
+}
+
+.form_field:focus, .form_field:hover, .form_field:link, .form_field:active{
+    transform: translateX(5%);
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border-color: dodgerblue;
+    outline: none;
+    /*box-shadow: -3px -3px 15px dodgerblue;*/
+}
+
+.p20{
+    padding-top: 20px;
+}
+.p5{
+    padding-top: 2ch;
+}
+
+.btn_login{
+    margin-top: 35px;
+    width: 7.5rem;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+    color: white;
+    transition: color 1s ease, box-shadow 1s ease, border-color 1s ease, background-color 1s ease;
+    background-color: rgba(30, 144, 255, 0);
+}
+.btn_login:focus, .btn_login:hover{
+    box-shadow: -3px -3px 15px dodgerblue;
+    outline: none;
+    background-color: rgba(30, 144, 255, 1);
+}
+.sign-up{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+        border-bottom: 1px solid transparent;
+    transition: transform 1s ease, color 1s ease, border-bottom-color 0.3s ease;
+}
+.sign-up:hover, .sign-up:focus {
+    color: dodgerblue;
+    transform: scale(1.1);
+    text-decoration: none;
+    border-bottom: 1px solid white;
+        /* vagy bármilyen szín */
+}
+
+
+@media (max-width: 480px) {
+    .form_block{
+        width: 20rem;
+    }
+    .form_field {
+        width: 60%;
+        max-width: 300px;
+    }
+    .notification-alert {
+        padding-left: 2%;
+
+    }
+}
+
+/* Input mezők megjelenése */
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-input {
+    animation: slideFadeIn 0.5s ease forwards;
+}
+
+/* Gomb és link lecsúszása */
+@keyframes moveDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(30px);
+    }
+}
+
+.animate-move-down {
+    animation: moveDown 0.5s ease forwards;
+}
